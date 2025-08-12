@@ -11,7 +11,7 @@ class CalendarDay : public Gtk::Frame
 {
 
 public:
-  CalendarDay(int date = 0);
+  CalendarDay(int date = 0, std::string* events = nullptr, int eventCount = 0);
   ~CalendarDay() override;
   //void measure_vfunc(Gtk::Orientation orient,int for_size,int& minimum,int& natural,int& min_baseline,int& nat_baseline) const override;
 
