@@ -1,14 +1,13 @@
-#include "calendarDay.h"
-#include <vector>
+#include "calendarDay.hpp"
 
-CalendarDay::CalendarDay(int date, std::Vector<Event> events) : Gtk::Frame(), container(Gtk::Orientation::VERTICAL, 2), dateLabel(std::to_string(date))
+CalendarDay::CalendarDay(int date, std::vector<Event> events) : Gtk::Frame(), container(Gtk::Orientation::VERTICAL, 2), dateLabel(std::to_string(date))
 {
     dateLabel.set_xalign(0.0f);
     dateLabel.set_hexpand(true);
     dateLabel.set_vexpand(false);
     container.append(dateLabel);
 	for(int index = 0; index < events.size(); index++) {
-            Gtk::Label eventLabel(events[index]);
+            Gtk::Label eventLabel(events[index].getName());
             container.append(eventLabel);
 	}
     exampleEvent.set_justify(Gtk::Justification::CENTER);

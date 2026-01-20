@@ -1,11 +1,11 @@
-#ifndef CALENDAR_H
-#define CALENDAR_H
+#ifndef CALENDAR_HPP
+#define CALENDAR_HPP
 
 #include <gtkmm/box.h>
 #include <gtkmm/orientable.h>
 #include <gtkmm/grid.h>
 #include <vector>
-#include "calendarDay.h"
+#include "calendarDay.hpp"
 
 class Calendar : public Gtk::Grid
 {
