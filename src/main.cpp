@@ -1,4 +1,4 @@
-#include "windows/mainWindow.h"
+#include "windows/mainWindow.hpp"
 #include <gtkmm/application.h>
 
 

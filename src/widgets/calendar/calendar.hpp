@@ -5,7 +5,10 @@
 #include <gtkmm/orientable.h>
 #include <gtkmm/grid.h>
 #include <vector>
+#include <memory>
+#include <chrono>
 #include "calendarDay.hpp"
+#include "../../backend/Event.hpp"
 
 class Calendar : public Gtk::Grid
 {
@@ -16,7 +19,7 @@ public:
 
 protected:
   //Member widgets:
-  std::vector<CalendarDay> days;
+  std::vector<std::unique_ptr<CalendarDay>> days;
 };
 
 #endif

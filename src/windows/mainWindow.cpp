@@ -1,4 +1,4 @@
-#include "mainWindow.h"
+#include "mainWindow.hpp"
 
 MainWindow::MainWindow() {
     set_child(calendar);

@@ -7,11 +7,12 @@ CalendarDay::CalendarDay(int date, std::vector<Event> events) : Gtk::Frame(), co
     dateLabel.set_vexpand(false);
     container.append(dateLabel);
 	for(int index = 0; index < events.size(); index++) {
-            Gtk::Label eventLabel(events[index].getName());
-            container.append(eventLabel);
+            std::unique_ptr<Gtk::Label> eventLabel = std::make_unique<Gtk::Label>(events[index].getName());
+            eventLabel->set_justify(Gtk::Justification::CENTER);
+            container.append(*eventLabel);
+            eventLabels.push_back(std::move(eventLabel));
+
 	}
-    exampleEvent.set_justify(Gtk::Justification::CENTER);
-    container.append(exampleEvent);
     set_hexpand(true);
     set_vexpand(true);
     set_child(container);
@@ -20,9 +21,3 @@ CalendarDay::~CalendarDay() {
     
 }
 
-/*void CalendarDay::measure_vfunc(Gtk::Orientation orient,int for_size,int& minimum,int& natural,int& min_baseline,int& nat_baseline) const {
-    if (for_size < 0) for_size = 0;   // first pass
-        minimum = natural = for_size;     // width == height
-        min_baseline = nat_baseline = -1; // we don’t use baselines
-}
-*/

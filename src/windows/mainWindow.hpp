@@ -1,5 +1,5 @@
 #include <gtkmm/window.h>
-#include "../widgets/calendar/calendar.h"
+#include "../widgets/calendar/calendar.hpp"
 
 class MainWindow : public Gtk::Window {
     public:
